@@ -1,44 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Markmap</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
-#mindmap {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-}
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind Map Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card a {
+      text-decoration: none;
+      color: #4CAF50;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .card a:hover {
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-<svg id="mindmap"></svg>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>(r => {
-              setTimeout(r);
-            })(function renderToolbar() {
-  const {
-    markmap,
-    mm
-  } = window;
-  const {
-    el
-  } = markmap.Toolbar.create(mm);
-  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
-  document.body.append(el);
-})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
-              const markmap = getMarkmap();
-              window.mm = markmap.Markmap.create(
-                "svg#mindmap",
-                (getOptions || markmap.deriveOptions)(jsonOptions),
-                root2
-              );
-            })(() => window.markmap,null,{"content":"XDR (Extended Detection and Response)","children":[{"content":"Microsoft 365 Defender","children":[{"content":"Microsoft Defender for Identity","children":[],"payload":{"tag":"li","lines":"2,3"}},{"content":"Microsoft Defender for Office 365","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"Microsoft Defender for Endpoints","children":[],"payload":{"tag":"li","lines":"4,5"}},{"content":"Microsoft Cloud App Security","children":[],"payload":{"tag":"li","lines":"5,6"}}],"payload":{"tag":"h2","lines":"1,2"}},{"content":"Azure Defender (CNAPP)","children":[{"content":"\n<p data-lines=\"7,8\">CSPM (Cloud Security Posture Management)</p>","children":[{"content":"\n<img src=\"https://raw.githubusercontent.com/Aamir-Ameen/mindmap/fd8ec829affc74fbd65dfb0db5e6d5f598f6fa57/cspm.png\" width=\"150\">","children":[],"payload":{"tag":"li","lines":"8,14"}}],"payload":{"tag":"li","lines":"7,14"}},{"content":"\n<p data-lines=\"14,15\">CWP (Cloud Workload Protection)</p>","children":[{"content":"Azure Defender for Servers","children":[{"content":"\n<img src=\"https://raw.githubusercontent.com/Aamir-Ameen/mindmap/fd8ec829affc74fbd65dfb0db5e6d5f598f6fa57/Server.png\" width=\"150\">","children":[],"payload":{"tag":"li","lines":"16,17"}}],"payload":{"tag":"li","lines":"15,17"}},{"content":"Azure Defender for App Service","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"Azure Defender for Storage","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"Azure Defender for SQL","children":[],"payload":{"tag":"li","lines":"19,20"}},{"content":"Azure Defender for Kubernetes","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"Azure Defender for Resource Manager","children":[],"payload":{"tag":"li","lines":"21,22"}},{"content":"Azure Defender for IoT","children":[],"payload":{"tag":"li","lines":"22,25"}}],"payload":{"tag":"li","lines":"14,25"}},{"content":"\n<p data-lines=\"25,26\">DevSecOps</p>","children":[],"payload":{"tag":"li","lines":"25,26"}}],"payload":{"tag":"h2","lines":"6,7"}}],"payload":{"tag":"h1","lines":"0,1"}},{})</script>
+
+<header>
+  <h1>Quick Learning Mind Maps</h1>
+  <p>Click on a topic below to explore the mind map.</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <a href="Questionnaire.html" target="_blank">Questionnaire</a>
+  </div>
+  <div class="card">
+    <a href="ServiceNow.html" target="_blank">ServiceNow</a>
+  </div>
+  <div class="card">
+    <a href="WAF.html" target="_blank">WAF</a>
+  </div>
+  <div class="card">
+    <a href="XDR.html" target="_blank">XDR</a>
+  </div>
+</div>
+
 </body>
 </html>
