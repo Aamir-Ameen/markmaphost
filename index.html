@@ -10,65 +10,41 @@
       background-color: #f4f7fa;
       color: #333;
       margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    .link-list {
+      list-style: none;
       padding: 0;
     }
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    .link-list li {
+      margin: 15px 0;
     }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .card {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-    }
-    .card a {
+    .link-list a {
       text-decoration: none;
       color: #4CAF50;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
-    .card a:hover {
+    .link-list a:hover {
       color: #333;
     }
   </style>
 </head>
 <body>
 
-<header>
   <h1>Quick Learning Mind Maps</h1>
-  <p>Click on a topic below to explore the mind map.</p>
-</header>
+  <p>Click on a topic to open the mind map.</p>
 
-<div class="container">
-  <div class="card">
-    <a href="Questionnaire.html" target="_blank">Questionnaire</a>
-  </div>
-  <div class="card">
-    <a href="ServiceNow.html" target="_blank">ServiceNow</a>
-  </div>
-  <div class="card">
-    <a href="WAF.html" target="_blank">WAF</a>
-  </div>
-  <div class="card">
-    <a href="XDR.html" target="_blank">XDR</a>
-  </div>
-</div>
+  <ul class="link-list">
+    <li><a href="Questionnaire.html" target="_blank">Questionnaire</a></li>
+    <li><a href="ServiceNow.html" target="_blank">ServiceNow</a></li>
+    <li><a href="WAF.html" target="_blank">WAF</a></li>
+    <li><a href="XDR.html" target="_blank">XDR</a></li>
+  </ul>
 
 </body>
 </html>
