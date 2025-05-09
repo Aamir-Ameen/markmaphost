@@ -11,8 +11,18 @@
       font-family: sans-serif;
       margin: 20px;
     }
-    h1, h2 {
-      margin-top: 30px;
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .column {
+      width: 30%;
+    }
+    h1 {
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.2em;
     }
     ul {
       list-style-type: none;
@@ -34,22 +44,32 @@
 
   <h1>dashboard</h1>
 
-  <h2>Azure Services</h2>
-  <ul>
-    <!-- Add Azure-related files here -->
-  </ul>
+  <div class="container">
 
-  <h2>Security</h2>
-  <ul>
-    <li><a href="XDR.html">XDR</a></li>
-    <li><a href="WAF.html">WAF</a></li>
-  </ul>
+    <div class="column">
+      <h2>Azure Services</h2>
+      <ul>
+        <!-- Add Azure-related files here -->
+      </ul>
+    </div>
 
-  <h2>Miscellaneous</h2>
-  <ul>
-    <li><a href="Questionnaire.html">Questionnaire</a></li>
-    <li><a href="ServiceNow.html">ServiceNow</a></li>
-  </ul>
+    <div class="column">
+      <h2>Security</h2>
+      <ul>
+        <li><a href="XDR.html">XDR</a></li>
+        <li><a href="WAF.html">WAF</a></li>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2>Miscellaneous</h2>
+      <ul>
+        <li><a href="Questionnaire.html">Questionnaire</a></li>
+        <li><a href="ServiceNow.html">ServiceNow</a></li>
+      </ul>
+    </div>
+
+  </div>
 
 </body>
 </html>
