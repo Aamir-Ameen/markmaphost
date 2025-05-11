@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firewall Comparison</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow-x: auto;
+    }
+    th, td {
+      border: 1px solid white;
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Firewall Comparison</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Feature</th>
+        <th>Firewall Basic</th>
+        <th>Firewall Standard</th>
+        <th>Firewall Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="2">L3-L7 filtering</td><td>Application level FQDN filtering (SNI based) for HTTPS/SQL</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Network level FQDN filtering – all ports and protocols</td><td></td><td>✓</td><td>✓</td></tr>
+
+      <tr><td rowspan="2">Network security</td><td>Stateful firewall (5 tuple rules)</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Network address translation (SNAT+DNAT)</td><td>✓</td><td>✓</td><td>✓</td></tr>
+
+      <tr><td rowspan="3">Reliability & performance</td><td>Availability zones</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Built-in HA</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Cloud scalability (auto-scale as traffic grows)</td><td>Up to 250Mbps</td><td>Up to 30 Gbps</td><td>Up to 100 Gbps</td></tr>
+
+      <tr><td>Fat flow support</td><td></td><td>N/A</td><td>1 Gbps</td><td>10 Gbps</td></tr>
+
+      <tr><td rowspan="2">Ease of management</td><td>Central management via firewall manager</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Policy analytics (rule management over time)</td><td>✓</td><td>✓</td><td>✓</td></tr>
+
+      <tr><td rowspan="3">Enterprise integration</td><td>Full logging including SIEM integration</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Service tags and FQDN tags for easy policy management</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Easy DevOps integration using REST/PowerShell/CLI/templates/Terraform</td><td>✓</td><td>✓</td><td>✓</td></tr>
+
+      <tr><td rowspan="2">Content filtering</td><td>Web content filtering (web categories)</td><td></td><td>✓</td><td>✓</td></tr>
+      <tr><td>DNS proxy + custom DNS</td><td></td><td>✓</td><td>✓</td></tr>
+
+      <tr><td rowspan="5">Advanced threat protection</td><td>Threat intelligence-based filtering (known malicious IP address/domains)</td><td>Alert</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Inbound TLS termination (TLS reverse proxy)</td><td></td><td></td><td>Using Azure Application Gateway</td></tr>
+      <tr><td>Outbound TLS termination (TLS forward proxy)</td><td></td><td></td><td>✓</td></tr>
+      <tr><td>Fully managed IDPS</td><td></td><td></td><td>✓</td></tr>
+      <tr><td>URL filtering (full path - including SSL termination)</td><td></td><td></td><td>✓</td></tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
