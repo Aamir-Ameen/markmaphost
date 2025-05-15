@@ -1,75 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Firewall Comparison</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: sans-serif;
-      margin: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow-x: auto;
-    }
-    th, td {
-      border: 1px solid white;
-      padding: 8px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background-color: #222;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>Compact Table</title>
+<style>
+  table {
+    font-family: Calibri, sans-serif;
+    border-collapse: collapse;
+    width: auto;          /* Let table shrink to content */
+    table-layout: fixed;  /* Fix layout to respect widths */
+    font-size: 12px;
+  }
+  th, td {
+    border: 1px solid #aaa;
+    padding: 3px 5px;
+    vertical-align: top;
+    overflow-wrap: break-word;  /* Break long words */
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  /* Make first column compact & wrap */
+  td.feature, th.feature {
+    max-width: 130px;
+    white-space: normal;  /* Allow wrapping */
+  }
+  /* Make brief column a bit wider, wrap text */
+  td.brief, th.brief {
+    max-width: 300px;
+    white-space: normal;
+  }
+  /* Center and shrink yes/no columns */
+  td.center, th.center {
+    text-align: center;
+    white-space: nowrap;
+    width: 40px;
+  }
+</style>
 </head>
 <body>
 
-  <h1>Firewall Comparison</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Feature</th>
-        <th>Firewall Basic</th>
-        <th>Firewall Standard</th>
-        <th>Firewall Premium</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td rowspan="2">L3-L7 filtering</td><td>Application level FQDN filtering (SNI based) for HTTPS/SQL</td><td>✓</td><td>✓</td><td>✓</td></tr>
-      <tr><td>Network level FQDN filtering – all ports and protocols</td><td></td><td>✓</td><td>✓</td></tr>
-
-      <tr><td rowspan="2">Network security</td><td>Stateful firewall (5 tuple rules)</td><td>✓</td><td>✓</td><td>✓</td></tr>
-      <tr><td>Network address translation (SNAT+DNAT)</td><td>✓</td><td>✓</td><td>✓</td></tr>
-
-      <tr><td rowspan="3">Reliability & performance</td><td>Availability zones</td><td>✓</td><td>✓</td><td>✓</td></tr>
-      <tr><td>Built-in HA</td><td>✓</td><td>✓</td><td>✓</td></tr>
-      <tr><td>Cloud scalability (auto-scale as traffic grows)</td><td>Up to 250Mbps</td><td>Up to 30 Gbps</td><td>Up to 100 Gbps</td></tr>
-
-      <tr><td>Fat flow support</td><td></td><td>N/A</td><td>1 Gbps</td><td>10 Gbps</td></tr>
-
-      <tr><td rowspan="2">Ease of management</td><td>Central management via firewall manager</td><td>✓</td><td>✓</td><td>✓</td></tr>
-      <tr><td>Policy analytics (rule management over time)</td><td>✓</td><td>✓</td><td>✓</td></tr>
-
-      <tr><td rowspan="3">Enterprise integration</td><td>Full logging including SIEM integration</td><td>✓</td><td>✓</td><td>✓</td></tr>
-      <tr><td>Service tags and FQDN tags for easy policy management</td><td>✓</td><td>✓</td><td>✓</td></tr>
-      <tr><td>Easy DevOps integration using REST/PowerShell/CLI/templates/Terraform</td><td>✓</td><td>✓</td><td>✓</td></tr>
-
-      <tr><td rowspan="2">Content filtering</td><td>Web content filtering (web categories)</td><td></td><td>✓</td><td>✓</td></tr>
-      <tr><td>DNS proxy + custom DNS</td><td></td><td>✓</td><td>✓</td></tr>
-
-      <tr><td rowspan="5">Advanced threat protection</td><td>Threat intelligence-based filtering (known malicious IP address/domains)</td><td>Alert</td><td>✓</td><td>✓</td></tr>
-      <tr><td>Inbound TLS termination (TLS reverse proxy)</td><td></td><td></td><td>Using Azure Application Gateway</td></tr>
-      <tr><td>Outbound TLS termination (TLS forward proxy)</td><td></td><td></td><td>✓</td></tr>
-      <tr><td>Fully managed IDPS</td><td></td><td></td><td>✓</td></tr>
-      <tr><td>URL filtering (full path - including SSL termination)</td><td></td><td></td><td>✓</td></tr>
-    </tbody>
-  </table>
+<table>
+  <thead>
+    <tr>
+      <th class="feature">Feature</th>
+      <th class="brief">Brief</th>
+      <th class="center">Basic</th>
+      <th class="center">Standard</th>
+      <th class="center">Premium</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="feature">Built-in high availability</td><td class="brief">Automatic failover using multiple backend instances.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Availability Zones</td><td class="brief">Supports zone-redundant deployments for high resiliency.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Application FQDN filtering rules</td><td class="brief">Controls outbound access by specifying domain names.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Network traffic filtering rules</td><td class="brief">Layer 3/4 rules using IPs, ports, and protocols.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">FQDN tags</td><td class="brief">Predefined domain groups for services like Windows Update.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Service tags</td><td class="brief">Simplifies rule creation using predefined Azure service IP sets.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Threat intelligence (alert)</td><td class="brief">Detects traffic to known malicious IPs/domains and logs it.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Outbound SNAT support</td><td class="brief">Replaces internal IPs with firewall's public IP for outbound traffic.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Inbound DNAT support</td><td class="brief">Maps public IP to private backend IP for incoming traffic.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Multiple public IPs</td><td class="brief">Supports up to 250 public IPs for SNAT and DNAT scenarios.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Azure Monitor logging</td><td class="brief">Logs all firewall events and metrics to Azure Monitor.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Certifications</td><td class="brief">Meets standards like PCI DSS, SOC, and ISO/IEC 27001.</td><td class="center">Yes</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Cloud scalability</td><td class="brief">Firewall auto-scales to handle increasing traffic.</td><td class="center">-</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Threat intelligence (block)</td><td class="brief">Blocks traffic from/to malicious IPs/domains using threat feed.</td><td class="center">-</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">DNS proxy</td><td class="brief">Firewall intercepts and forwards DNS queries for FQDN filtering.</td><td class="center">-</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Custom DNS</td><td class="brief">Allows use of custom DNS servers for resolution.</td><td class="center">-</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">FQDN in network rules</td><td class="brief">Uses domain names in L3/4 rules instead of IPs.</td><td class="center">-</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">No public IP (Forced Tunnel)</td><td class="brief">Firewall can run without public IP using forced tunneling setup.</td><td class="center">-</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Forced tunneling</td><td class="brief">Redirects internet-bound traffic through on-premises/NVA firewall.</td><td class="center">-</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Web categories</td><td class="brief">Allows/blocks websites by category (e.g. social media).</td><td class="center">-</td><td class="center">Yes</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">TLS inspection</td><td class="brief">Decrypts HTTPS traffic to inspect for threats, then re-encrypts.</td><td class="center">-</td><td class="center">-</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">IDPS</td><td class="brief">Detects and blocks known attack patterns (signatures).</td><td class="center">-</td><td class="center">-</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">URL filtering</td><td class="brief">Allows/blocks access to specific URL paths, not just domains.</td><td class="center">-</td><td class="center">-</td><td class="center">Yes</td></tr>
+    <tr><td class="feature">Advanced categories</td><td class="brief">Premium matches by full URL vs Standard which uses FQDN only.</td><td class="center">-</td><td class="center">-</td><td class="center">Yes</td></tr>
+  </tbody>
+</table>
 
 </body>
 </html>
