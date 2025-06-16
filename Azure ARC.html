@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Azure Arc","children":[{"content":"\n<p data-lines=\"2,3\"><strong>Overview</strong></p>","children":[{"content":"Azure Arc extends Azure services and management to any infrastructure, including on-premises, multicloud, and edge environments.","children":[],"payload":{"tag":"li","lines":"3,5"}}],"payload":{"tag":"li","lines":"2,5"}},{"content":"\n<p data-lines=\"5,6\"><strong>Technologies</strong></p>","children":[{"content":"<strong>Azure Arc Control Plane</strong>","children":[{"content":"<strong>Core Functionalities</strong>","children":[{"content":"Resource organization","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"Azure Resource Graph","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"Role-based access control (RBAC)","children":[],"payload":{"tag":"li","lines":"10,11"}}],"payload":{"tag":"li","lines":"7,11"}},{"content":"<strong>Automation</strong>","children":[{"content":"Through templates and extensions","children":[],"payload":{"tag":"li","lines":"12,13"}}],"payload":{"tag":"li","lines":"11,13"}},{"content":"<strong>Cost</strong>","children":[{"content":"Offered at no extra cost","children":[],"payload":{"tag":"li","lines":"14,15"}}],"payload":{"tag":"li","lines":"13,15"}}],"payload":{"tag":"li","lines":"6,15"}},{"content":"<strong>Integrated Azure Services</strong>","children":[{"content":"<strong>Included Services</strong>","children":[{"content":"Azure Monitor","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"Microsoft Defender for Cloud","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"Azure Policy","children":[],"payload":{"tag":"li","lines":"19,20"}}],"payload":{"tag":"li","lines":"16,20"}},{"content":"<strong>Charges</strong>","children":[{"content":"These services incur additional costs based on usage","children":[],"payload":{"tag":"li","lines":"21,23"}}],"payload":{"tag":"li","lines":"20,23"}}],"payload":{"tag":"li","lines":"15,23"}}],"payload":{"tag":"li","lines":"5,23"}},{"content":"\n<p data-lines=\"23,24\"><strong>Supports</strong></p>","children":[{"content":"<strong>Azure Arc-enabled servers</strong>","children":[{"content":"&#x1f6e1;&#xfe0f; Govern","children":[{"content":"Assign machine configuration policies","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"Policy-based compliance","children":[],"payload":{"tag":"li","lines":"27,28"}}],"payload":{"tag":"li","lines":"25,28"}},{"content":"&#x1f6e1;&#xfe0f; Protect","children":[{"content":"Defender for Endpoint integration","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"Microsoft Sentinel integration","children":[],"payload":{"tag":"li","lines":"30,31"}}],"payload":{"tag":"li","lines":"28,31"}},{"content":"&#x2699;&#xfe0f; Configure","children":[{"content":"Use Azure Automation for task automation","children":[],"payload":{"tag":"li","lines":"32,33"}},{"content":"Change tracking with Azure Monitor Agent","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"Azure Update Manager for OS updates","children":[],"payload":{"tag":"li","lines":"34,35"}}],"payload":{"tag":"li","lines":"31,35"}},{"content":"&#x1f4ca; Monitor","children":[{"content":"VM Insights for performance monitoring","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"Azure Monitor Agent for data collection","children":[],"payload":{"tag":"li","lines":"37,38"}}],"payload":{"tag":"li","lines":"35,38"}}],"payload":{"tag":"li","lines":"24,38"}},{"content":"<strong>SQL Server enabled by Azure Arc</strong>","children":[{"content":"Custom Dashboard","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"Best Practices Assessment","children":[],"payload":{"tag":"li","lines":"40,41"}},{"content":"Microsoft Entra Authentication","children":[],"payload":{"tag":"li","lines":"41,42"}},{"content":"Microsoft Defender for Cloud","children":[],"payload":{"tag":"li","lines":"42,43"}},{"content":"Microsoft Purview Integration","children":[],"payload":{"tag":"li","lines":"43,44"}},{"content":"Pay-as-You-Go for SQL Server","children":[],"payload":{"tag":"li","lines":"44,45"}},{"content":"Extended Security Updates (ESU)","children":[],"payload":{"tag":"li","lines":"45,46"}},{"content":"Performance Dashboards","children":[],"payload":{"tag":"li","lines":"46,47"}},{"content":"Migration Assessment","children":[],"payload":{"tag":"li","lines":"47,48"}}],"payload":{"tag":"li","lines":"38,48"}},{"content":"<strong>Azure Arc-enabled Kubernetes</strong>","children":[],"payload":{"tag":"li","lines":"48,49"}},{"content":"<strong>Azure Arc-enabled data services</strong>","children":[],"payload":{"tag":"li","lines":"49,50"}},{"content":"<strong>Azure Arc-enabled VMware vSphere</strong>","children":[],"payload":{"tag":"li","lines":"50,51"}},{"content":"<strong>Azure Arc-enabled System Center Virtual Machine Manager</strong>","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"<strong>Azure Arc VM management on Azure Local</strong>","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"<strong>Azure Arc site manager</strong>","children":[],"payload":{"tag":"li","lines":"53,54"}},{"content":"<strong>Multicloud connector enabled by Azure Arc</strong>","children":[],"payload":{"tag":"li","lines":"54,56"}}],"payload":{"tag":"li","lines":"23,56"}}],"payload":{"tag":"h1","lines":"0,1"}},{})</script>
+</body>
+</html>
